@@ -1,13 +1,9 @@
-import cv2
 import numpy as np
-
-img = np.zeros((250, 500, 3), np.uint8)
-
-img = cv2.rectangle(img, (250,0), (500,500), (255,255,255), -1)
-
-cv2.imwrite('./images/image_1.png', img)
-cv2.imshow('img', img)
-
-
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+import matplotlib.pyplot as plt
+x = np.arange(0, 25, 0.1)
+fig, axis = plt.subplots(1, 2, figsize=(15, 5))
+plt.ylabel('sin(x)')
+plt.xlabel('x')
+axis[0].plot(np.sin(x))
+axis[1].plot(np.cos(x))
+plt.show()
